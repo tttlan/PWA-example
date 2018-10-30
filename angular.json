@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "PWA-test": {
+    "PWA-example": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/PWA-test",
+            "outputPath": "dist",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -50,18 +50,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "PWA-test:build"
+            "browserTarget": "PWA-example:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "PWA-test:build:production"
+              "browserTarget": "PWA-example:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "PWA-test:build"
+            "browserTarget": "PWA-example:build"
           }
         },
         "test": {
@@ -95,7 +95,7 @@
         }
       }
     },
-    "PWA-test-e2e": {
+    "PWA-example-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "architect": {
@@ -103,11 +103,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "PWA-test:serve"
+            "devServerTarget": "PWA-example:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "PWA-test:serve:production"
+              "devServerTarget": "PWA-example:serve:production"
             }
           }
         },
@@ -123,5 +123,5 @@
       }
     }
   },
-  "defaultProject": "PWA-test"
+  "defaultProject": "PWA-example"
 }
